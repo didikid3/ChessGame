@@ -9,6 +9,7 @@ class Piece:
 			self.sprite = 'white_'
 		else:
 			self.sprite = 'black_'
+			
 		if self.type == 'pawn':
 			self.sprite += 'pawn.png'
 		elif self.type == 'rook':
