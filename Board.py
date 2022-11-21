@@ -1,25 +1,34 @@
-from GamePieces import Piece
+from File import File
+from Location import Location
+from SquareColor import SquareColor
+from Square import Square
 
-board = [['' for i in range(8)] for i in range(8)]
+class Board:
+
+    def __init__(self) :
+        self.boardSquares = [ [None for x in range(8)] for y in range(8)]
+
+        for i in range(8):
+            col = 0
+            currColor = "Light" if i%2 == 0 else "Dark"
+            file = 'A'
+
+            for j in range(8):
+                squareColor = SquareColor(currColor)
+                location = Location(file, 8-i)
+
+                self.boardSquares[i][col] = Square(squareColor, location)
+
+                #Update Per Square
+                file = chr(ord(file) + 1)
+                col += 1
+                currColor = "Light" if (currColor == "Dark") else "Dark"
 
 
-def createBoard(gameBoard):
-	board[0] = [Piece('rook', 1), Piece('knight', 1), 
-				Piece('bishop', 1), Piece('queen', 1), 
-				Piece('king', 1), Piece('bishop', 1), 
-                Piece('knight', 1), Piece('rook', 1)
-                ]
-
-	board[7] = [Piece('rook', 0), Piece('knight', 0), 
-				Piece('bishop', 0), Piece('queen', 0), 
-				Piece('king', 0), Piece('bishop', 0), 
-	            Piece('knight', 0), Piece('rook', 0)
-	            ]
-
-	for i in range(8):
-	    board[1][i] = Piece('pawn', 1, 'b_pawn.png')
-	    board[6][i] = Piece('pawn', 0, 'w_pawn.png')
-	return board
-
-board = createBoard(board)
-print(board)
+    def printBoard(self):
+        for row in self.boardSquares:
+            for square in row:
+                print(square, end="")
+            print()
+        
+                
