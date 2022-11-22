@@ -22,5 +22,7 @@ class Piece:
     def __str__(self):
         res = "Piece\n"
         res += "Name - " + self.name
-        res += "\nPiece Color - " + self.pieceColor
-        res += "\n" + self.currentSquare
+        res += "\nPiece Color - " + self.pieceColor.__str__()
+        res += "\n" + self.currentSquare.__str__()
+        res += "\n-----"
+        return res

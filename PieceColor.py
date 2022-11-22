@@ -5,3 +5,6 @@ class PieceColor:
         return self.color
     def setColor(self, color):
         self.color = color
+
+    def __str__(self):
+        return self.color
