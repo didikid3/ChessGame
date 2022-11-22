@@ -13,7 +13,7 @@ class Piece:
     def getPieceColor(self):
         return self.pieceColor
 
-    def getCurretnSquare(self):
+    def getCurrentSquare(self):
         return self.currentSquare
 
     def setCurrentSquare(self, currentSquare):

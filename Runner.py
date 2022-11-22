@@ -10,8 +10,7 @@ def main():
 
     pawn = Pawn(color)
     queen = Queen(color)
-    print(pawn)
-    print(queen)
+    pawn.getValidMoves(None)
 
     
 
