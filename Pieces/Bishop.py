@@ -1,13 +1,13 @@
-from Movable import Movable
-from Piece import Piece
+from Pieces.Piece import Piece
 from Board import Board
-from Square import Square
 
-class Knight(Piece, Movable):
+
+class Bishop(Piece):
+    
 
     def __init__(self, pieceColor):
         Piece.__init__(self, pieceColor)
-        self.name = "Knight"
+        self.name = "Bishop"
 
     def getValidMoves(self, board, square=None):
         print(self.getName() + "-> getValidMoves")

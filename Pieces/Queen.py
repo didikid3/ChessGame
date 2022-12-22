@@ -1,10 +1,7 @@
 from Board import Board
-from Movable import Movable
-from Piece import Piece
-from Square import Square
+from Pieces.Piece import Piece
 
-
-class Queen(Piece, Movable):
+class Queen(Piece):
 
     def __init__(self, pieceColor, bishop, rook):
         Piece.__init__(self, pieceColor)

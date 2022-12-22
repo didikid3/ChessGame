@@ -1,15 +1,14 @@
 from Board import Board
-from Piece import Piece
-from PieceColor import PieceColor
-from Pawn import Pawn
-from Queen import Queen
+from Pieces.Piece import Piece
+from Pieces.PieceColor import PieceColor
+from Pieces.Pawn import Pawn
+from Pieces.Queen import Queen
 def main():
     # board = Board()
     # board.printBoard()
     color = PieceColor("Dark")
 
     pawn = Pawn(color)
-    queen = Queen(color)
     pawn.getValidMoves(None)
 
     

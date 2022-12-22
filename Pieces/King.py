@@ -1,4 +1,4 @@
-from Piece import Piece
+from Pieces.Piece import Piece
 from Board import Board
 
 class King(Piece):
