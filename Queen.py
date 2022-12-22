@@ -1,7 +1,8 @@
+from Board import Board
 from Movable import Movable
 from Piece import Piece
-from Board import Board
 from Square import Square
+
 
 class Queen(Piece, Movable):
 
@@ -22,4 +23,3 @@ class Queen(Piece, Movable):
         current = self.getCurrentSquare()
         self.setCurrentSquare(square)
         current.reset()
-        print(self.getName() + "-> makeMove()")

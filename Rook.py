@@ -9,7 +9,7 @@ class Rook(Piece, Movable):
         Piece.__init__(self, pieceColor)
         self.name = "Rook"
 
-    def getValidMoves(self, board):
+    def getValidMoves(self, board, square=None):
         print(self.getName() + "-> getValidMoves")
 
     def makeMove(self, square):
