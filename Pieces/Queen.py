@@ -9,10 +9,10 @@ class Queen(Piece):
         self.rook = rook
         self.name = "Queen"
 
-    def getValidMoves(self, board, square=None):
+    def getValidMoves(self, board):
         moveCandidates = []
-        moveCandidates.extend(self.bishop.getValidMoves(board, self.getCurrentSquare()))
-        moveCandidates.extend(self.rook.getValidMoves(board, self.getCurrentSquare()))
+        moveCandidates.extend(self.bishop.getValidMoves(board))
+        moveCandidates.extend(self.rook.getValidMoves())
         
         return moveCandidates
 

@@ -1,15 +1,23 @@
 from Board import Board
 from Pieces.Piece import Piece
 from Pieces.PieceColor import PieceColor
-from Pieces.Pawn import Pawn
+from Pieces.Rook import Rook
 from Pieces.Queen import Queen
+from Querries.FindPieces import FindPieces
+
 def main():
-    # board = Board()
+    db = FindPieces()
+    db_res = None
+    #board = Board()
     # board.printBoard()
     color = PieceColor("Dark")
 
-    pawn = Pawn(color)
-    pawn.getValidMoves(None)
+    db_res = db.selectAll()
+    rook = Rook(color)
+    rook.setCurrentSquare((0,0))
+
+    print(rook.getValidMoves())
+    
 
     
 

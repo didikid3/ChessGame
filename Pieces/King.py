@@ -7,7 +7,7 @@ class King(Piece):
         Piece.__init__(self, pieceColor)
         self.name = "King"
 
-    def getValidMoves(self, board, square=None):
+    def getValidMoves(self, board):
         print(self.getName() + "-> getValidMoves")
 
     def makeMove(self, square):
