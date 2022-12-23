@@ -1,13 +1,20 @@
 from Board import Board
 from Pieces.Piece import Piece
+from Pieces.Bishop import Bishop
+from Pieces.Rook import Rook
 
 class Queen(Piece):
 
-    def __init__(self, pieceColor, bishop, rook):
+    def __init__(self, pieceColor):
         Piece.__init__(self, pieceColor)
-        self.bishop = bishop
-        self.rook = rook
+        self.bishop = Bishop(pieceColor)
+        self.rook = Rook(pieceColor)
         self.name = "Queen"
+
+    def setCurrentSquare(self, currentSquare):
+        self.currentSquare = currentSquare
+        self.bishop.setCurrentSquare(currentSquare)
+        self.rook.setCurrentSquare(currentSquare)
 
     def getValidMoves(self, board):
         moveCandidates = []

@@ -13,6 +13,7 @@ class Rook(Piece):
 
         range_row = [0,7]
         range_col = [0,7]
+        
         cur_row = self.getCurrentSquare()[0]
         cur_col = self.getCurrentSquare()[1]
 
