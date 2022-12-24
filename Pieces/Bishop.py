@@ -24,18 +24,40 @@ class Bishop(Piece):
         for item in diag:
             if item[3] == cur_row and item[4] == cur_col:
                 continue
+
             slope = (item[4] - cur_col) / (item[3] - cur_row)
 
             if slope > 0:
                 if item[3] < cur_row:
                     positive[0] = max(positive[0], item[3])
+
+                    if item[1] == self.getPieceColor() and \
+                                    positive[0] == item[3]:
+                        positive[0] += 1
+                        
+
                 elif item[3] > cur_row:
                     positive[1] = min(positive[1], item[3])
+
+                    if item[1] == self.getPieceColor() and \
+                                    positive[1] == item[3]:
+                        positive[1] -= 1
+
             else:
-                if item[3] < cur_row:
-                    negative[0] = max(negative[0], item[3])
-                elif item[3] > cur_row:
+                if item[3] > cur_row:
                     negative[1] = min(negative[1], item[3])
+
+                    if item[1] == self.getPieceColor() and \
+                                    negative[1] == item[3]:
+                        negative[1] -= 1
+                
+                elif item[3] < cur_row:
+                    negative[0] = max(negative[0], item[3])
+
+                    if item[1] == self.getPieceColor() and \
+                                    negative[0] == item[3]:
+                        negative[0] += 1     
+ 
 
         return (positive, negative)
 

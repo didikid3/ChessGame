@@ -19,20 +19,40 @@ class Rook(Piece):
 
         row_data = db.select_row(cur_row)
         col_data = db.select_col(cur_col)
-
         for piece in row_data:
+            if piece[3] == cur_row and piece[4] == cur_col:
+                continue
+
             col = int(piece[4])
             if col < cur_col:
-                range_col[0] = col
+                if piece[1] != self.getPieceColor():
+                    range_col[0] = col
+                else:
+                    range_col[0] = col + 1
             elif col > cur_col:
-                range_col[1] = col
+                if piece[1] != self.getPieceColor():
+                    range_col[1] = col
+                else:
+                    range_col[1] = col - 1
+
                 break
+
         for piece in col_data:
+            if piece[3] == cur_row and piece[4] == cur_col:
+                continue
+
             row = int(piece[3])
             if row < cur_row:
-                range_row[0] = row
+                if piece[1] != self.getPieceColor():
+                    range_row[0] = row
+                else:
+                    range_row[0] = row + 1
+
             elif row > cur_row:
-                range_row[1] = row
+                if piece[1] != self.getPieceColor():
+                    range_row[1] = row
+                else:
+                    range_row[1] = row - 1
                 break
 
         '''
