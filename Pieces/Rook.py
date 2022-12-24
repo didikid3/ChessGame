@@ -36,9 +36,9 @@ class Rook(Piece):
                 break
 
         '''
-        print("Same Col, Different Rows:")
+        #UP DOWN
         print(range_row)
-        print("Same Row, Different Cols:")
+        #LEFT RIGHT
         print(range_col)
         '''
 

@@ -12,14 +12,20 @@ from Board import Board
 
 def main():
     db = FindPieces()
+    db.truncateTable()
 
     board = Board()
+    querry = []
+
+    setBoard(querry)
+    db.newGame(querry)
+
     querry = db.selectAll()
     board.setBoard(querry)
     for x in board.getBoard():
-        if x.getName() == 'Bishop' and x.getCurrentSquare() == (3,3):
+        if x.getName() == 'Queen':
             print(x.getCurrentSquare())
-            x.getValidMoves()
+            print(x.getValidMoves())
 
     
 

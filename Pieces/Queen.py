@@ -16,11 +16,12 @@ class Queen(Piece):
         self.bishop.setCurrentSquare(currentSquare)
         self.rook.setCurrentSquare(currentSquare)
 
-    def getValidMoves(self, board):
+    def getValidMoves(self):
         moveCandidates = []
-        moveCandidates.extend(self.bishop.getValidMoves(board))
+        moveCandidates.extend(self.bishop.getValidMoves())
         moveCandidates.extend(self.rook.getValidMoves())
         
+        #Positive Slope, Negative Slope, Up Down, Left Right
         return moveCandidates
 
     def makeMove(self, square):
