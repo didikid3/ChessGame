@@ -17,6 +17,7 @@ class Queen(Piece):
         self.rook.setCurrentSquare(currentSquare)
 
     def getValidMoves(self):
+        print(self.getName() + "-> getValidMoves")
         moveCandidates = []
         moveCandidates.extend(self.bishop.getValidMoves())
         moveCandidates.extend(self.rook.getValidMoves())

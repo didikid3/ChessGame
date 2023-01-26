@@ -1,5 +1,7 @@
 import mysql.connector
+
 from Pieces.Piece import Piece
+
 
 class FindPieces:
     conn = None
@@ -89,8 +91,15 @@ class FindPieces:
         res = res.union(set(FindPieces.cursor.fetchall()))
         return list(res)
 
-
-
+    def check_for_piece(self, row, col):
+        FindPieces.cursor.execute(
+            "Select * \
+             From location as L \
+             Where L.Row=" + str(row) +
+            " and L.Col=" + str(col) +
+            " and L.GameID = " + FindPieces.gameID
+        )
+        return FindPieces.cursor.fetchall()
 if __name__ == '__main__':
     tst = FindPieces()
     for x in tst.selectAll():

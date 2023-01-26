@@ -11,6 +11,7 @@ class Bishop(Piece):
         self.name = "Bishop"
 
     def getValidMoves(self):
+        print(self.getName() + "-> getValidMoves")
         db = FindPieces()
 
         #Represents the slope of the diag
@@ -59,6 +60,8 @@ class Bishop(Piece):
                         negative[0] += 1     
  
 
+        #Positive slope, negative slope
+        #Shows the range of rows possible
         return (positive, negative)
 
 

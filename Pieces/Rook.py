@@ -9,6 +9,7 @@ class Rook(Piece):
         self.name = "Rook"
 
     def getValidMoves(self):
+        print(self.getName() + "-> getValidMoves")
         db = FindPieces()
 
         range_row = [0,7]
