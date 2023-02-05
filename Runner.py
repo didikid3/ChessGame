@@ -23,6 +23,7 @@ def main():
     querry = db.selectAll()
     board.setBoard(querry)
     for x in board.getBoard():
+        print(x.getName())
         # if x.getName() == 'Queen':
         #     print(x.getCurrentSquare())
         #     print(x.getValidMoves())
