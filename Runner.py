@@ -23,17 +23,12 @@ def main():
     querry = db.selectAll()
     board.setBoard(querry)
     for x in board.getBoard():
-        print(x.getName())
-        # if x.getName() == 'Queen':
-        #     print(x.getCurrentSquare())
-        #     print(x.getValidMoves())
         if x.getName() == 'Pawn':
             print(x.getCurrentSquare())
             print(x.getValidMoves())
-
-    
-
-   
+        if x.getName() == 'King':
+            print(x.getCurrentSquare())
+            print(x.getValidMoves())
 
 def setBoard(board):
     color_black = PieceColor("Dark")
